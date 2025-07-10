@@ -6,6 +6,9 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Backend running at http://localhost:${port}`);
+});
 
 const intercom = axios.create({
   baseURL: "https://api.intercom.io",
